@@ -9,6 +9,7 @@ import java.util.*
 import javax.validation.Valid
 
 @RestController
+@CrossOrigin(origins =  ["*"]) //this will enable CORS on all endpoints for the controller
 @RequestMapping("/api")
 class ArticleController(private val articleRepository: ArticleRepository) {
 
