@@ -1,9 +1,6 @@
 package com.example.kotlindemo.model
 
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
+import javax.persistence.*
 import javax.validation.constraints.NotBlank
 
 @Entity
@@ -14,12 +11,12 @@ data class Producto (
         @get: NotBlank
         val nombre: String = "",
 
-        @get: NotBlank
+        @Enumerated(EnumType.STRING)
         val unidadDeMedida: UnidadDeMedida = UnidadDeMedida.UNIDAD,
 
-        @get: NotBlank
+        @Enumerated(EnumType.STRING)
         val categoria: Categoria = Categoria.OTROS,
 
-        @get: NotBlank
+        @Enumerated(EnumType.STRING)
         val tipo: Tipo = Tipo.NOCONSUMIBLE
         )
